@@ -1,0 +1,37 @@
+*{
+  box-sizing: border-box;
+}
+
+#controls{
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+button{
+  margin-bottom: 16px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px rebeccapurple solid;
+  color: rebeccapurple;
+  background-color: white;
+  font-weight: bold;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+  cursor: pointer;
+}
+
+#grid-container{
+  width: 504px;
+  height: 504px;
+  margin:0 auto;
+  border: 2px solid black;
+  display: flex;
+  flex-wrap: wrap;
+  cursor: pointer;
+  background-color: black;
+}
+
+.bg-color{
+  background-color: rebeccapurple;
+}
