@@ -60,10 +60,19 @@ function clearGrids(){
  
 }
 
+function generateRandomColor(){
+  red = Math.floor(Math.random() * 255) + 1;
+  green = Math.floor(Math.random() * 255) + 1;
+  blue = Math.floor(Math.random() * 255) + 1;
+
+  return `rgb(${red}, ${green}, ${blue})`;
+}
+
+
 function paintGridSquare(event){
-  // This check ensures that only the bg-color of the grids change and not the entire grid container at once
+  // This check ensures that only the grid squares are targeted
   if(!isNaN(event.target.id)){
-    event.target.classList.add("bg-color");
+    event.target.style.backgroundColor = generateRandomColor();
   }
   
 }
@@ -106,15 +115,6 @@ function resetGrids(){
 customizeBtn.addEventListener("click", createCustomGrids);
 
 resetBtn.addEventListener("click", resetGrids);
-
-
-function generateRandomColor(){
-  red = Math.floor(Math.random() * 255) + 1;
-  green = Math.floor(Math.random() * 255) + 1;
-  blue = Math.floor(Math.random() * 255) + 1;
-
-  return `rgb(${red}, ${green}, ${blue})`;
-}
 
 
 
