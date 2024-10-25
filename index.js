@@ -61,9 +61,9 @@ function clearGrids(){
 }
 
 function generateRandomColor(){
-  red = Math.floor(Math.random() * 255) + 1;
-  green = Math.floor(Math.random() * 255) + 1;
-  blue = Math.floor(Math.random() * 255) + 1;
+  red = Math.floor(Math.random() * 256);
+  green = Math.floor(Math.random() * 256);
+  blue = Math.floor(Math.random() * 256);
 
   return `rgb(${red}, ${green}, ${blue})`;
 }
@@ -80,22 +80,31 @@ function paintGridSquare(event){
 
 gridContainer.addEventListener("mouseover", paintGridSquare);
 
-function isValidInput(){
-    gridsPerSide = prompt(`Enter the number of grids you wish to have per side?
-    The maximum number is 100`);
-
-    while(isNaN(gridsPerSide)){
-      gridsPerSide = prompt("Enter a numerical value between 1 and 100")
+// Checks for invalid user input;
+function isInvalidInput(input){
+  if(isNaN(input)){
+    return true
+  } else{
+    let number = Number(input);
+    if(!Number.isInteger(number) ||
+        number < 0 ||
+        number > 100  ){
+      return true;
     }
-    while(gridsPerSide < 1 || gridsPerSide > 100){
-      gridsPerSide = prompt("Enter a number between 1 and 100");
-    }
-    return gridsPerSide;
+  }
 }
 
 
 function createCustomGrids(){
-    gridsPerSide = isValidInput();
+
+  gridsPerSide = prompt(`Enter the no. of grids you wish you have per side.
+  The maximum number is 100`);
+  let invalid = isInvalidInput(gridsPerSide);
+
+  while(invalid){
+    gridsPerSide = prompt(`Enter a numerical value between 1 - 100`);
+    invalid = isInvalidInput(gridsPerSide);
+  }
     totalGrids = gridsPerSide * gridsPerSide;
 
     clearGrids();
@@ -115,9 +124,3 @@ function resetGrids(){
 customizeBtn.addEventListener("click", createCustomGrids);
 
 resetBtn.addEventListener("click", resetGrids);
-
-
-
-
-
-
