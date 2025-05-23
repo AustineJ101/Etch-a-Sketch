@@ -1,10 +1,17 @@
 ## Etch-a-Sketch Project
 
-This project is a web-based version of the classic Etch-a-Sketch toy, built using HTML, CSS, and JavaScript. It showcases DOM manipulation and user interaction with mouse events. 
-Users can customize the grid size, draw by hovering over the grid squares, and reset the grid to the default state.
+This project is a modern, interactive version of the classic Etch-a-Sketch, built using HTML, CSS, and JavaScript. It emphasizes clean structure, efficient DOM manipulation, and an enhanced user experience through dynamic coloring and input validation.
 
 # Features
- - Dynamic Grid Creation: The default grid is 16x16, but users can customize it up to 100x100.
- - Hover-based Drawing: The grid squares change color when the user hovers over them, simulating the drawing experience.
- - Customization: The user can specify a custom grid size via a prompt.
- - Reset Functionality: The grid can be reset back to the default size (16x16) at any time.
+ - Dynamic Grid Generation
+ - Generates a default 16×16 grid, with support for custom sizes up to 100×100.
+
+ - Hover-Based Drawing with Color Darkening
+ - Grid squares are colored with a random RGB value on first hover, and darken by 10% on each subsequent      hover—creating a layered, sketch-like effect.
+
+ - Customizable Grid Size
+   Users can input their desired grid size via prompt. Robust validation ensures only integer values between 1 and 100 are accepted.
+
+ - Reset Functionality
+   Easily reset the canvas by generating a new grid at any time.
+
